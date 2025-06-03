@@ -57,10 +57,11 @@ def compute_score(solution_str, ground_truth, method="strict", format_score=0.0,
     if answer is None:
         return 0
     else:
-        if answer == str(ground_truth):
+        if str(ground_truth) == answer.strip():
             return score
-        else:
-            return format_score
+        if str(ground_truth) in answer:
+            return score
+        return format_score
 
 
 if __name__ == "__main__":
