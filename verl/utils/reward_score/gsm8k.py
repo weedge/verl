@@ -57,7 +57,12 @@ def compute_score(solution_str, ground_truth, method="strict", format_score=0.0,
     if answer is None:
         return 0
     else:
-        if answer == ground_truth:
+        if answer == str(ground_truth):
             return score
         else:
             return format_score
+
+
+if __name__ == "__main__":
+    score = compute_score("Natalia sold 48/2 = <<48/2=24>>24 clips in May.\nNatalia sold 48+24 = <<48+24=72>>72 clips altogether in April and May.\n#### 72", 72)
+    print(score)
