@@ -44,6 +44,7 @@ actor:
   strategy: fsdp  # This is for backward-compatibility
   ulysses_sequence_parallel_size: 1 # sp size
   fsdp_config:
+    model_dtype: bfloat16
     fsdp_size: -1
 
 ray_init:
